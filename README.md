@@ -3,5 +3,5 @@ Práctica sobre la representación de datos con la herramienta [D3.js](https://d
 
 ## Contenido
  - [Proyecto Web](https://github.com/jhoncabanilla/Crecimiento-Poblacion/tree/main/web)
-- [Informe]()
-- [Diapositivas]()
+- [Informe](https://github.com/jhoncabanilla/Crecimiento-Poblacion/tree/main/Informe)
+- [Diapositivas](https://github.com/jhoncabanilla/Crecimiento-Poblacion/tree/main/Diapositivas)
