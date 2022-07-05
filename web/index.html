@@ -1,0 +1,124 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Crecimiento de la poblacion</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Tabs.js"></script>
+    <script src="LineChart.js"></script>
+    <script src="ChoroplethMap.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <h1>CRECIMIENTO DE LA POBLACION</h1>
+    <div id="tabs">
+        <ul>
+            <li><a id="tab1" class="">Tasa Crecimiento</a></li>
+            <li><a id="tab2" class="inactive">Tasa Crecimiento Desarrollo</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Tab 1 Choropleth map -->
+    <div class="container" id="tab1C" style="display: none;">
+        <h2>Tasa de Crecimiento de la Poblacion</h2>
+        
+        <div id="grupo1">
+            <!--En este div, id=grafico, se incluye el svg del mapa-->
+            <div id="grafico"></div>
+    
+            <!-- En este div se incluyen el slider, el selector del modo y la leyenda-->
+            <div id="Info">
+                <!-- En este div iran el slider para seleccionar el año y el selector del modo-->
+                <div id="control"> <!--Seria el Slider-->
+                    <div id="selector">
+                        <label>Mode</label>
+                        <select id="mapMode">
+                            <option selected="" value="Population growth">Tasa con Migracion</option>
+                            <option value="Natural increase">Tasa sin Migracion</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Year</label>
+                        <span id="yearOutput">1989</span>
+                        <br>
+                        <label>1950</label>
+                        <input type="range" id="year" min="1950" max="2019" value="1989">
+                        <label>2019</label>
+                    </div>
+    
+                    <div id="Leyenda">
+                        <div id="Grados">
+                        </div>
+                    </div>
+    
+                    <div id="copyright">
+                        © Jhon Steeven Cabanilla Alvarado 2021
+                        <br>
+                        Sources: <a href="https://ourworldindata.org/world-population-growth#estimates-of-population-in-recent-history-and-projections">Our World in Data</a> / <a href="https://population.un.org/wpp/">United Nations</a> / <a href="https://geojson-maps.ash.ms/">Ash Kyd GeoJSON</a>
+                    </div>
+    
+                </div>
+                
+            </div>
+    
+        </div>
+
+    </div>
+
+
+    <!-- Tab 2 Line chart -->
+    <div class="container" id="tab2C">
+        <h2 id="titulo2">Tasa de Crecimiento de la Poblacion por Nivel de Desarrollo</h2>
+        <div id="grupo2">
+            <div id="serie"></div>
+            <!-- Selectores de la medida de la tasa: "Population Growth" o "Natural Increase" -->
+            <table>
+                <tbody><tr>
+                    <td>
+                        <h4>Medida Tasa</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <ul id="radiosTasa" type="none">
+                                <li><input name="tipotasa" value="0" type="radio" checked="">Population Growth</li>
+                                <li><input name="tipotasa" value="1" type="radio">Natural Increase</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+            <!-- Selectores de las distintas regiones -->
+            <table>
+                <tbody><tr>
+                    <td>
+                        <h4 id="leyendaRegion">Region</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="checkRegion" class="selectioncontainer">
+                            <ul id="column1" class="column" type="none">
+                                <li style="color:#e41a1c;"><input name="Less Developed Regions" type="checkbox" checked="">Less Developed Regions</li>
+                                <li style="color:#377eb8;"><input name="More Developed Regions" type="checkbox" checked="">More Developed Regions</li>
+                                <li style="color:#ff7f00;"><input name="Least Developed Countries" type="checkbox" checked="">Least Developed Countries</li>
+                                <li style="color:#fcea0c;"><input name="Low-income countries" type="checkbox" checked="">Low-income countries</li>
+                                <li style="color:#a8fc0c;"><input name="Lower-middle-income countries" type="checkbox" checked="">Lower-middle-income countries</li>
+                                <li style="color:#0cfcd8;"><input name="Middle-income countries" type="checkbox" checked="">Middle-income countries</li>
+                                <li style="color:#000080;"><input name="Upper-middle-income countries" type="checkbox" checked="">Upper-middle-income countries</li>
+                                <li style="color:#fc0c75;"><input name="High income countries" type="checkbox" checked="">High income countries</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
